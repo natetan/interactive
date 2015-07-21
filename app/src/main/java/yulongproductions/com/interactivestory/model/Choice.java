@@ -13,10 +13,12 @@ public class Choice {
     }
 
     public String getText() {
+
         return mText;
     }
 
     public void setText(String text) {
+
         mText = text;
     }
 
@@ -25,6 +27,7 @@ public class Choice {
     }
 
     public void setNextPage(int nextPage) {
+
         mNextPage = nextPage;
     }
 }
