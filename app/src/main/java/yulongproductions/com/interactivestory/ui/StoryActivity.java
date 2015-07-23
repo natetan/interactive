@@ -41,14 +41,17 @@ public class StoryActivity extends Activity {
         }
         Log.d(TAG, mName);
 
-        mImageView = (ImageView)findViewById(R.id.storyImageView);
-        mTextView = (TextView)findViewById(R.id.storyTextView);
-        mChoice1 = (Button)findViewById(R.id.choiceButton1);
-        mChoice2 = (Button)findViewById(R.id.choiceButton2);
+        mImageView = (ImageView) findViewById(R.id.storyImageView);
+        mTextView = (TextView) findViewById(R.id.storyTextView);
+        mChoice1 = (Button) findViewById(R.id.choiceButton1);
+        mChoice2 = (Button) findViewById(R.id.choiceButton2);
 
+        // Starts the adventure at the first page
         loadPage(0);
     }
 
+    // This method loads the page based on the choice the user makes, and gets the index of the page
+    // It grabs the image from the resources and sets the page text and choices
     private void loadPage(int choice) {
         mCurrentPage = mStory.getPage(choice);
         Drawable drawable = getResources().getDrawable(mCurrentPage.getImageId());
@@ -59,6 +62,7 @@ public class StoryActivity extends Activity {
         pageText = String.format(pageText, mName);
         mTextView.setText(pageText);
 
+        // Checks if the page is the last page, and if it is, it finishes the activity.
         if (mCurrentPage.isFinal()) {
             mChoice1.setVisibility(View.INVISIBLE);
             mChoice2.setText("PLAY AGAIN");
@@ -68,10 +72,11 @@ public class StoryActivity extends Activity {
                     finish();
                 }
             });
-        } else {
+        } else { // It's not the end of the story / final page yet
             mChoice1.setText(mCurrentPage.getChoice1().getText());
             mChoice2.setText(mCurrentPage.getChoice2().getText());
 
+            // Links the next pages based on first choice
             mChoice1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -80,6 +85,7 @@ public class StoryActivity extends Activity {
                 }
             });
 
+            // Links the choices based on second choice
             mChoice2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

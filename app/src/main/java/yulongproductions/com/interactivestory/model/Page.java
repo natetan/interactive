@@ -11,57 +11,57 @@ public class Page {
     private boolean mIsFinal = false;
 
     public Page(int imageId, String text) {
-        mImageId = imageId;
-        mText = text;
-        mChoice1 = null;
-        mChoice2 = null;
-        mIsFinal = true;
+        this.mImageId = imageId;
+        this.mText = text;
+        this.mChoice1 = null;
+        this.mChoice2 = null;
+        this.mIsFinal = true;
     }
 
     public Page(int imageId, String text, Choice c1, Choice c2) {
-        mImageId = imageId;
-        mText = text;
-        mChoice1 = c1;
-        mChoice2 = c2;
+        this.mImageId = imageId;
+        this.mText = text;
+        this.mChoice1 = c1;
+        this.mChoice2 = c2;
     }
 
     public boolean isFinal() {
-        return mIsFinal;
+        return this.mIsFinal;
     }
 
     public void setIsFinal(boolean isFinal) {
-        mIsFinal = isFinal;
+        this.mIsFinal = isFinal;
     }
 
     public int getImageId() {
-        return mImageId;
+        return this.mImageId;
     }
 
     public void setImageId(int imageId) {
-        mImageId = imageId;
+        this.mImageId = imageId;
     }
 
     public String getText() {
-        return mText;
+        return this.mText;
     }
 
     public void setText(String text) {
-        mText = text;
+        this.mText = text;
     }
 
     public Choice getChoice1() {
-        return mChoice1;
+        return this.mChoice1;
     }
 
     public void setChoice1(Choice choice1) {
-        mChoice1 = choice1;
+        this.mChoice1 = choice1;
     }
 
     public Choice getChoice2() {
-        return mChoice2;
+        return this.mChoice2;
     }
 
     public void setChoice2(Choice choice2) {
-        mChoice2 = choice2;
+        this.mChoice2 = choice2;
     }
 }
